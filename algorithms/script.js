@@ -24,3 +24,24 @@ console.log(sameFrequency(34, 14));
 console.log(sameFrequency(182, 281));
 console.log(sameFrequency(22, 222));
 console.log(sameFrequency(34, 14));
+
+//Multiple pointers
+
+function areThereDuplicates(...args) {
+  let obj = {};
+  for (let item of args) {
+    if (obj[item]) {
+      obj[item] += 1;
+    } else {
+      obj[item] = 1;
+    }
+  }
+  for (let item in obj) {
+    if (obj[item] > 1) {
+      return true;
+    }
+  }
+  return false;
+}
+
+console.log(areThereDuplicates(1, 2, 3));
