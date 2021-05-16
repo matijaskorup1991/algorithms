@@ -60,3 +60,19 @@ function averagePair(arr, target) {
 }
 
 console.log(averagePair([1, 2, 3], 2.5));
+
+//MULTIPLE POINTERS is Subsequence:
+
+function isSubsequence(str1, str2) {
+  let a = [...str2];
+  let rez = '';
+  for (let i = 0; i < str2.length; i++) {
+    if (a.indexOf(str1[i]) >= 0) {
+      a.splice(a.indexOf(str1[i]), 1);
+      rez += str1[i];
+    }
+  }
+  return rez === str1;
+}
+
+console.log(isSubsequence('sing', 'sting'));
