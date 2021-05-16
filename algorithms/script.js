@@ -45,3 +45,18 @@ function areThereDuplicates(...args) {
 }
 
 console.log(areThereDuplicates(1, 2, 3));
+
+//MULTIPLE POINTERS average pair
+
+function averagePair(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 1; j < arr.length; j++) {
+      if ((arr[i] + arr[j]) / 2 === target) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+console.log(averagePair([1, 2, 3], 2.5));
