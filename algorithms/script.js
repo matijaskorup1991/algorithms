@@ -76,3 +76,23 @@ function isSubsequence(str1, str2) {
 }
 
 console.log(isSubsequence('sing', 'sting'));
+
+//MAX SUBARRAY SUM:
+
+function maxSubarraySum(arr, target) {
+  if (target > arr.length) return null;
+  let temp = 0;
+  let max = 0;
+  for (let i = 0; i < target; i++) {
+    temp += arr[i];
+    max = temp;
+  }
+
+  for (let i = target; i < arr.length; i++) {
+    temp += arr[i] - arr[i - target];
+    max = Math.max(max, temp);
+  }
+  return max;
+}
+
+console.log(maxSubarraySum([100, 200, 300, 400], 2));
