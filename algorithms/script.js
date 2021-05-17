@@ -96,3 +96,23 @@ function maxSubarraySum(arr, target) {
 }
 
 console.log(maxSubarraySum([100, 200, 300, 400], 2));
+
+//FIND longest substring
+
+function findLongestSubstring(string) {
+  let max = 0;
+  let obj = {};
+  let start = 0;
+
+  for (let i = 0; i < string.length; i++) {
+    let char = string[i];
+    if (obj[char]) {
+      start = Math.max(start, obj[char]);
+    }
+    max = Math.max(max, i - start + 1);
+    obj[char] = i + 1;
+  }
+  return max;
+}
+
+console.log(findLongestSubstring('abcab'));
