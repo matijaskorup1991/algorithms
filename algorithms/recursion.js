@@ -42,4 +42,11 @@ function collectOddValues(arr) {
   return result;
 }
 
-console.log(collectOddValues([1, 2, 3, 4, 5, 6]));
+// console.log(collectOddValues([1, 2, 3, 4, 5, 6]));
+
+function power(a, b) {
+  if (b === 0) return 1;
+  return a * power(a, b - 1);
+}
+
+// console.log(power(2, 3));
