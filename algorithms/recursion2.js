@@ -61,4 +61,32 @@ function nestedEvenSum(obj) {
   return res.filter((el) => el % 2 === 0).reduce((a, b) => a + b, 0);
 }
 
-console.log(nestedEvenSum(obj1));
+// console.log(nestedEvenSum(obj1));
+
+let objSource = {
+  num: 1,
+  test: [],
+  data: {
+    val: 4,
+    info: {
+      isRight: true,
+      random: 66,
+    },
+  },
+};
+
+function stringifyNumbers(obj) {
+  let newObj = Array.isArray(obj) ? [] : {};
+  for (let key in obj) {
+    if (typeof obj[key] === 'number') {
+      newObj[key] = obj[key].toString();
+    } else if (typeof obj[key] === 'object') {
+      newObj[key] = stringifyNumbers(obj[key]);
+    } else {
+      newObj[key] = obj[key];
+    }
+  }
+  return newObj;
+}
+
+console.log(stringifyNumbers(objSource));
