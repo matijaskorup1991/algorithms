@@ -28,3 +28,37 @@ function flatten(arr) {
 }
 
 console.log(flatten([1, 2, [3], [[4], 5]]));
+
+var obj1 = {
+  outer: 2,
+  obj: {
+    inner: 2,
+    otherObj: {
+      superInner: 2,
+      notANumber: true,
+      alsoNotANumber: 'yup',
+    },
+  },
+};
+
+var obj2 = {
+  a: 2,
+  b: { b: 2, bb: { b: 3, bb: { b: 2 } } },
+  c: { c: { c: 2 }, cc: 'ball', ccc: 5 },
+  d: 1,
+  e: { e: { e: 2 }, ee: 'car' },
+};
+
+function nestedEvenSum(obj) {
+  let res = [];
+  for (let item in obj) {
+    if (typeof obj[item] === 'object') {
+      res = res.concat(nestedEvenSum(obj[item]));
+    } else if (typeof obj[item] === 'number') {
+      res.push(obj[item]);
+    }
+  }
+  return res.filter((el) => el % 2 === 0).reduce((a, b) => a + b, 0);
+}
+
+console.log(nestedEvenSum(obj1));
