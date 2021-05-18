@@ -4,8 +4,7 @@ function linearSearch(arr, el) {
   return arr.indexOf(el);
 }
 
-console.log(linearSearch([1, 2, 3, 4, 5, 6, 7], 5));
-
+// s
 //BINARY SEARCH:
 
 function binarySearch(arr, el) {
@@ -25,3 +24,25 @@ function binarySearch(arr, el) {
   }
   return -1;
 }
+
+function maxChar(str) {
+  let obj = {};
+  let max = 0;
+  let char = '';
+  for (let item of str) {
+    if (obj[item]) {
+      obj[item] += 1;
+    } else {
+      obj[item] = 1;
+    }
+  }
+  for (let item in obj) {
+    if (obj[item] > max) {
+      max = obj[item];
+      char = item;
+    }
+  }
+  return char;
+}
+
+console.log(maxChar('staaaaaa'));
