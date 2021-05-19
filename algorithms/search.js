@@ -88,16 +88,19 @@ function chunk(arr, size) {
 
 // console.log(chunk([1, 2, 3, 4, 5], 3));
 function caesarCiper(str, shift) {
+  let reqEx = /[0-9]/g;
   let char = str
     .split(' ')
     .map((el) => {
       return el
         .split('')
-        .map((el) => String.fromCharCode(el.charCodeAt(el) + shift))
+        .map((el) =>
+          reqEx.test(el) ? el : String.fromCharCode(el.charCodeAt(el) + shift)
+        )
         .join('');
     })
     .join(' ');
   return char;
 }
 
-console.log(caesarCiper('hello world', 1));
+console.log(caesarCiper('hello world 5 matija', 1));
