@@ -45,4 +45,45 @@ function maxChar(str) {
   return char;
 }
 
-console.log(maxChar('staaaaaa'));
+// console.log(maxChar('staaaaaa'));
+
+function fizzbuzz(n) {
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log('fizzbuzz');
+    } else if (i % 3 === 0) {
+      console.log('fizz');
+    } else if (i % 5 === 0) {
+      console.log('buzz');
+    } else {
+      console.log(i);
+    }
+  }
+}
+// fizzbuzz(15);
+
+function capitalizeWords(str) {
+  let input = str.split(' ').map((el) => el.toLowerCase());
+  return input
+    .map((el) => {
+      return el.charAt(0).toUpperCase() + el.slice(1);
+    })
+    .join(' ');
+}
+
+console.log(capitalizeWords('sHoRt ANd StOUt'));
+
+function chunk(arr, size) {
+  if (size > arr.length) return arr;
+  let start = 0;
+  let count = size;
+  let res = [];
+  while (arr.length > start) {
+    res.push(arr.slice(start, count));
+    start += size;
+    count += size;
+  }
+  return res;
+}
+
+console.log(chunk([1, 2, 3, 4, 5], 3));
