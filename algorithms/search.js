@@ -103,4 +103,15 @@ function caesarCiper(str, shift) {
   return char;
 }
 
-console.log(caesarCiper('hello world 5 matija', 1));
+// console.log(caesarCiper('hello world 5 matija', 1));
+
+function steps(n) {
+  let arr = Array(n).fill(' ');
+  for (let i = 0; i < n; i++) {
+    arr.unshift('#');
+    arr.pop();
+    console.log(arr.join(''));
+  }
+}
+
+steps(5);
