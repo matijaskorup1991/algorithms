@@ -58,3 +58,59 @@ console.log(
     10
   )
 );
+
+// Write a function that takes an array of values and moves all elements that are zero to the end of the array,
+//  otherwise preserving the order of the array. The zero elements must also maintain the order in which they occurred.
+
+// For example, the following array
+
+// [7, 2, 3, 0, 4, 6, 0, 0, 13, 0, 78, 0, 0, 19, 14]
+
+// is transformed into
+
+// [7, 2, 3, 4, 6, 13, 78, 19, 14, 0, 0, 0, 0, 0, 0]
+
+// Zero elements are defined by either 0 or "0". Some tests may include elements that are not number literals.
+
+function removeZeros(array) {
+  let arr1 = [];
+  let arr2 = [];
+  array.map((el) => {
+    if (el === '0' || el === 0) {
+      arr2 = [...arr2, el];
+    } else {
+      arr1 = [...arr1, el];
+    }
+  });
+  return [...arr1, ...arr2];
+}
+
+// Write a program that will calculate the number of trailing zeros in a factorial of a given number.
+
+// N! = 1 * 2 * 3 * ... * N
+
+// Be careful 1000! has 2568 digits...
+
+// For more info, see: http://mathworld.wolfram.com/Factorial.html
+
+function zeros(n) {
+  if (n === 0) return 0;
+  let count = 0;
+  let rez = n;
+  for (let i = n - 1; i >= 1; i--) {
+    rez *= i;
+  }
+  rez = String(rez);
+  let a = rez.split('').reverse();
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] == 0) {
+      count++;
+    } else {
+      break;
+    }
+  }
+  console.log(rez);
+  return count;
+}
+
+console.log(zeros(3));
