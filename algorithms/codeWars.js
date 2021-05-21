@@ -40,3 +40,21 @@ console.log(
     [5, 11],
   ])
 );
+
+function justify(str, len) {
+  let start = 0;
+  let end = len;
+
+  while (str.length > start) {
+    console.log(str.substring(start, end));
+    start += len;
+    end += len;
+  }
+}
+
+console.log(
+  justify(
+    'empor  eget.  In quis rhoncus nunc,  at  aliquet orci. Fusce at   dolor   sit   amet  felis suscipit   tristique.   Nam  a imperdiet   tellus.  Nulla  e',
+    10
+  )
+);
