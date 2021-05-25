@@ -114,3 +114,26 @@ function zeros(n) {
 }
 
 console.log(zeros(3));
+
+function topThreeWords(text) {
+  let obj = {};
+  let regEx = /[,.!?:;]/g;
+  let data = text.replace(regEx, '').split(' ');
+
+  data.forEach((el) => {
+    if (obj[el]) {
+      obj[el] += 1;
+    } else {
+      obj[el] = 1;
+    }
+  });
+  return Object.keys(obj)
+    .sort((a, b) => obj[b] - obj[a])
+    .slice(0, 3);
+}
+
+console.log(
+  topThreeWords(
+    'In a village of La Matija Matija Matija Mancha, the name of which I have no desire to call tomind, there lived not long since one of those gentlemen that keep a lanceon Sundays, made away with three-quarters of his income'
+  )
+);
