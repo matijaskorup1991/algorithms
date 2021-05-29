@@ -52,12 +52,12 @@ function justify(str, len) {
   }
 }
 
-console.log(
-  justify(
-    'empor  eget.  In quis rhoncus nunc,  at  aliquet orci. Fusce at   dolor   sit   amet  felis suscipit   tristique.   Nam  a imperdiet   tellus.  Nulla  e',
-    10
-  )
-);
+// console.log(
+//   justify(
+//     'empor  eget.  In quis rhoncus nunc,  at  aliquet orci. Fusce at   dolor   sit   amet  felis suscipit   tristique.   Nam  a imperdiet   tellus.  Nulla  e',
+//     10
+//   )
+// );
 
 // Write a function that takes an array of values and moves all elements that are zero to the end of the array,
 //  otherwise preserving the order of the array. The zero elements must also maintain the order in which they occurred.
@@ -132,8 +132,48 @@ function topThreeWords(text) {
     .slice(0, 3);
 }
 
+// console.log(
+//   topThreeWords(
+//     'In a village of La Matija Matija Matija Mancha, the name of which I have no desire to call tomind, there lived not long since one of those gentlemen that keep a lanceon Sundays, made away with three-quarters of his income'
+//   )
+// );
+
+// '<a href="/">HOME</a> : <a href="/pictures/">PICTURES</a> : <span class="active">HOLIDAYS</span>'
+function generateBC(url, separator) {
+  let copy = url.split('/');
+  copy.shift();
+
+  return `<a href="/">HOME</a> ${separator} <a href="/${copy[0].toLowerCase()}/">${copy[0].toUpperCase()}</a> ${separator} <span class="active">${copy[1]
+    .substring(
+      0,
+      copy[1].indexOf('.') >= 0 ? copy[1].indexOf('.') : copy[1].length
+    )
+    .toUpperCase()}</span>`;
+}
+
 console.log(
-  topThreeWords(
-    'In a village of La Matija Matija Matija Mancha, the name of which I have no desire to call tomind, there lived not long since one of those gentlemen that keep a lanceon Sundays, made away with three-quarters of his income'
+  generateBC(
+    'mysite.com/very-long-url-to-make-a-silly-yet-meaningful-example/example.asp',
+    ' > '
   )
 );
+console.log(
+  '<a href="/">HOME</a> > <a href="/very-long-url-to-make-a-silly-yet-meaningful-example/">VLUMSYME</a> > <span class="active">EXAMPLE</span>'
+);
+console.log(
+  generateBC(
+    'www.very-long-site_name-to-make-a-silly-yet-meaningful-example.com/users/giacomo-sorbi',
+    ' + '
+  )
+);
+
+// Given a list of integers, determine whether the sum of its elements is odd or even.
+
+// Give your answer as a string matching "odd" or "even".
+
+// If the input array is empty consider it as: [0] (array with a zero).
+
+function oddOrEven(array) {
+  if (array.length === 0) return 'even';
+  return array.reduce((a, b) => a + b, 0) % 2 === 0 ? 'even' : 'odd';
+}
