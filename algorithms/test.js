@@ -43,3 +43,16 @@ function reverse(num) {
 }
 
 // console.log(reverse(321));
+
+function vowels(str) {
+  let counter = 0;
+  let regex = /[aeiouAEIOU]/g;
+  for (let i = 0; i < str.length; i++) {
+    if (regex.test(str[i])) {
+      counter++;
+    }
+  }
+  return counter;
+}
+
+console.log(vowels('mAtija'));
