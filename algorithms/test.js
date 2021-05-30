@@ -32,4 +32,14 @@ function twoSums(arr, target) {
   }
 }
 
-console.log(twoSums([2, 7, 11, 15], 18));
+// console.log(twoSums([2, 7, 11, 15], 18));
+
+function reverse(num) {
+  return Number(
+    String(num)
+      .split('')
+      .reduceRight((a, b) => a + b, '')
+  );
+}
+
+// console.log(reverse(321));
