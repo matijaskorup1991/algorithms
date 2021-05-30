@@ -55,4 +55,26 @@ function vowels(str) {
   return counter;
 }
 
-console.log(vowels('mAtija'));
+// console.log(vowels('mAtija'));
+
+function longestWord(str) {
+  return str.split(' ').reduce((a, b) => (a.length > b.length ? a : b));
+}
+
+console.log(longestWord('my name is Bond, James Bond'));
+
+//no negative Numbers
+//no 0
+function mathSequences(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i + 1] - 2 === arr[i]) {
+      return 'Arithmetic';
+    } else if (arr[i + 1] / 3 === arr[i]) {
+      return 'Geometric';
+    }
+    return -1;
+  }
+}
+// console.log(mathSequences([2, 4, 6, 8]));
+// console.log(mathSequences([3, 9, 27]));
+// console.log(mathSequences([2, 5, 14, 89]));
