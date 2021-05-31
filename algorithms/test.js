@@ -96,4 +96,10 @@ function longestWords(str) {
   return res;
 }
 
-console.log(longestWords('I woke up early today'));
+// console.log(longestWords('I woke up early today'));
+
+function unique(str) {
+  return new Set([...str]).length === str.length;
+}
+
+console.log(unique('abcdeee'));
