@@ -102,4 +102,14 @@ function unique(str) {
   return new Set([...str]).length === str.length;
 }
 
-console.log(unique('abcdeee'));
+// console.log(unique('abcdeee'));
+
+function arraySum(arr) {
+  let max = Math.max(...arr);
+  let maxIndex = arr.indexOf(max);
+  arr.splice(maxIndex, 1);
+  return arr.reduce((a, b) => a + b, 0) === max ? true : false;
+}
+
+console.log(arraySum([1, 2, 4, 6, 13]));
+console.log(arraySum([1, 2, 4, 34, 22]));
