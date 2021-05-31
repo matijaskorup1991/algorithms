@@ -145,3 +145,17 @@ function secondValue(arr) {
 
 // console.log(secondValue([11, 44, 22]));
 // console.log(secondValue([3, 2, 88, 3, -11, 67, 7]));
+
+function isPrime(value) {
+  for (let i = 2; i < value; i++) {
+    if (value % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isPrime(11));
+console.log(isPrime(8));
+console.log(isPrime(121));
+console.log(isPrime(127));
