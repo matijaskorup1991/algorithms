@@ -111,5 +111,29 @@ function arraySum(arr) {
   return arr.reduce((a, b) => a + b, 0) === max ? true : false;
 }
 
-console.log(arraySum([1, 2, 4, 6, 13]));
-console.log(arraySum([1, 2, 4, 34, 22]));
+// console.log(arraySum([1, 2, 4, 6, 13]));
+// console.log(arraySum([1, 2, 4, 34, 22]));
+
+function getUnique(arr) {
+  let copy = arr.map((el) => el.company);
+  let items = Array.from(new Set(copy));
+  let res = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (items.includes(arr[i].company)) {
+      res.push(arr[i]);
+      items.splice(arr[i].company, 1);
+    }
+  }
+  return res;
+}
+
+// console.log(
+//   getUnique([
+//     { title: 'Iphone', company: 'Apple' },
+//     { title: 's8', company: 'Samsung' },
+//     { title: 's9', company: 'Samsung' },
+//     { title: 'Mac', company: 'Apple' },
+//     { title: 'ipad', company: 'Apple' },
+//     { title: 'p30', company: 'Huawei' },
+//   ])
+// );
