@@ -78,3 +78,22 @@ function mathSequences(arr) {
 // console.log(mathSequences([2, 4, 6, 8]));
 // console.log(mathSequences([3, 9, 27]));
 // console.log(mathSequences([2, 5, 14, 89]));
+
+function longestWords(str) {
+  let max = 0;
+  let res = [];
+  let words = str.split(' ');
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length > max) {
+      max = words[i].length;
+    }
+  }
+  for (let item of words) {
+    if (item.length === max) {
+      res.push(item);
+    }
+  }
+  return res;
+}
+
+console.log(longestWords('I woke up early today'));
