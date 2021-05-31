@@ -137,3 +137,11 @@ function getUnique(arr) {
 //     { title: 'p30', company: 'Huawei' },
 //   ])
 // );
+
+function secondValue(arr) {
+  let copy = Array.from(new Set(arr));
+  return copy.sort((a, b) => a - b);
+}
+
+// console.log(secondValue([11, 44, 22]));
+// console.log(secondValue([3, 2, 88, 3, -11, 67, 7]));
