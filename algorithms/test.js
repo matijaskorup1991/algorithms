@@ -61,7 +61,7 @@ function longestWord(str) {
   return str.split(' ').reduce((a, b) => (a.length > b.length ? a : b));
 }
 
-console.log(longestWord('my name is Bond, James Bond'));
+// console.log(longestWord('my name is Bond, James Bond'));
 
 //no negative Numbers
 //no 0
@@ -175,3 +175,10 @@ function countLetters(str) {
 }
 
 // console.log(countLetters('matijaaaaaaaa'));
+
+function onlyNumbers(str) {
+  let regex = /[0-9]/g;
+  return str.match(regex).join('');
+}
+
+// console.log(onlyNumbers('matija1991'));
