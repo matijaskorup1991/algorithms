@@ -155,7 +155,23 @@ function isPrime(value) {
   return true;
 }
 
-console.log(isPrime(11));
-console.log(isPrime(8));
-console.log(isPrime(121));
-console.log(isPrime(127));
+// console.log(isPrime(11));
+// console.log(isPrime(8));
+// console.log(isPrime(121));
+// console.log(isPrime(127));
+
+function countLetters(str) {
+  let obj = {};
+  for (let i of str) {
+    if (obj[i]) {
+      obj[i] += 1;
+    } else {
+      obj[i] = 1;
+    }
+  }
+  return Object.entries(obj)
+    .flatMap((el) => el.reverse())
+    .join('');
+}
+
+// console.log(countLetters('matijaaaaaaaa'));
