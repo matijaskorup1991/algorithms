@@ -177,8 +177,8 @@ function countLetters(str) {
 // console.log(countLetters('matijaaaaaaaa'));
 
 function onlyNumbers(str) {
-  let regex = /[0-9]/g;
-  return str.match(regex).join('');
+  let regex = /\d+/g;
+  return str.match(regex);
 }
 
-// console.log(onlyNumbers('matija1991'));
+console.log(onlyNumbers('matija1991 test 19 '));
