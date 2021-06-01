@@ -194,4 +194,10 @@ function shuffleArray(arr) {
   return arr;
 }
 
-console.log(shuffleArray([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+// console.log(shuffleArray([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+
+function repeatStr(str, num) {
+  return new Array(num).fill(str).join('');
+}
+
+// console.log(repeatStr('matija', 10));
