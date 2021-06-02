@@ -200,4 +200,12 @@ function repeatStr(str, num) {
   return new Array(num).fill(str).join('');
 }
 
-// console.log(repeatStr('matija', 10));
+//
+function truncateStr(str, len) {
+  if (str.length < len) {
+    return str;
+  }
+  return `${str.substring(0, len - 3)}...`;
+}
+
+// console.log(truncateStr('test test test', 8));
