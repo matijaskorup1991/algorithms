@@ -36,4 +36,14 @@ function bouncer(arr) {
   return arr.filter((x) => x);
 }
 
-console.log(bouncer([false, null, '', undefined, 0, NaN, 1, 2, 3, 4]));
+// console.log(bouncer([false, null, '', undefined, 0, NaN, 1, 2, 3, 4]));
+
+function destroy(arr, ...rest) {
+  let newArr = [];
+  if (rest.length > 0) {
+    newArr = arr.filter((el, i) => (rest.includes(el) ? '' : el));
+  }
+  return newArr;
+}
+
+// console.log(destroy([1, 2, 3, 1, 2, 3], 2, 3));
