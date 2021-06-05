@@ -115,3 +115,8 @@ function countLetters(str, letter) {
 }
 
 console.log(countLetters('testBBB', 't'));
+
+function remove(array, index) {
+  return array.slice(0, index).concat(array.slice(index + 1));
+}
+console.log(remove([1, 2, 3, 4, 5], 2));
