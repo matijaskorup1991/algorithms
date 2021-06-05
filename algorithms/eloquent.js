@@ -54,3 +54,20 @@ for (let i = 20; ; i++) {
 // };
 
 // humus(3);
+
+// const power = (base, exponent) => {
+//   let result = 1;
+//   for (let i = 0; i < exponent; i++) {
+//     result *= base;
+//   }
+//   return result;
+// };
+
+function power(base, exponent) {
+  if (exponent === 0) {
+    return 1;
+  }
+  return base * power(base, exponent - 1);
+}
+
+console.log(power(2, 2));
