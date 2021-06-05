@@ -106,17 +106,53 @@ for (let i = 20; ; i++) {
 
 // farmInventory(3, 68);
 
-function countLetters(str, letter) {
-  let counter = 0;
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === letter) counter++;
+// function countLetters(str, letter) {
+//   let counter = 0;
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] === letter) counter++;
+//   }
+//   return counter;
+// }
+
+// console.log(countLetters('testBBB', 't'));
+
+// function remove(array, index) {
+//   return array.slice(0, index).concat(array.slice(index + 1));
+// }
+// console.log(remove([1, 2, 3, 4, 5], 2));
+
+function range(start, end, step = 1) {
+  let res = [];
+  if (step < 0) {
+    for (let i = start; i >= end; i += step) {
+      res.push(i);
+    }
   }
-  return counter;
+  for (let i = start; i <= end; i += step) {
+    res.push(i);
+  }
+  return res;
 }
 
-console.log(countLetters('testBBB', 't'));
-
-function remove(array, index) {
-  return array.slice(0, index).concat(array.slice(index + 1));
+function sum(input) {
+  if (input.length === 0) {
+    return 0;
+  }
+  return input[0] + sum([...input.slice(1)]);
 }
-console.log(remove([1, 2, 3, 4, 5], 2));
+
+console.log(range(1, 10, 2));
+console.log(range(5, 2, -1));
+
+// console.log(sum(range(10, 20)));
+// console.log(sum([2, 2, 2, 2]));
+
+function reverseArray(array) {
+  let res = [];
+  for (let i = array.length - 1; i >= 0; i--) {
+    res.push(array[i]);
+  }
+  return res;
+}
+
+// console.log(reverseArray([1, 2, 3, 4]));
