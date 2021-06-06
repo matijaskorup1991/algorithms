@@ -141,8 +141,8 @@ function sum(input) {
   return input[0] + sum([...input.slice(1)]);
 }
 
-console.log(range(1, 10, 2));
-console.log(range(5, 2, -1));
+// console.log(range(1, 10, 2));
+// console.log(range(5, 2, -1));
 
 // console.log(sum(range(10, 20)));
 // console.log(sum([2, 2, 2, 2]));
@@ -156,3 +156,82 @@ function reverseArray(array) {
 }
 
 // console.log(reverseArray([1, 2, 3, 4]));
+
+// function deepCompare(obj1, obj2) {
+//   if (obj1 === null || obj2 === null) return false;
+//   if (Array.isArray(obj1) || Array.isArray(obj2)) return false;
+//   if (typeof obj1 !== 'object' || typeof obj2 !== 'object') return false;
+
+//   let objA = Object.keys(obj1);
+//   let objB = Object.keys(obj2);
+
+//   if (objA.length !== objB.length) return false;
+
+//   let res = [];
+//   for (let item in obj1) {
+//     if (typeof obj1[item] === 'object') {
+//       return deepCompare(obj1[item], obj2[item]);
+//     }
+//     if (obj1[item] == obj2[item]) {
+//       res.push(true);
+//     } else {
+//       res.push(false);
+//     }
+//   }
+//   return res.every((el) => el === true);
+// }
+
+// console.log(
+//   deepCompare(
+//     {
+//       name: 'matija',
+//       age: 30,
+//       work: {
+//         current: false,
+//       },
+//       city: 'aalen',
+//     },
+//     {
+//       name: 'matija',
+//       age: 30,
+//       work: {
+//         current: false,
+//       },
+//       city: 'aalen',
+//       status: 'online',
+//     }
+//   )
+// );
+
+// for (let i = 0; i <= 10; i++) {
+//   if (i == 5) {
+//     continue;
+//   } else {
+//     console.log(i);
+//   }
+// }
+
+// function greatherThan(n) {
+//   return (m) => m > n;
+// }
+
+// const greatherThan10 = greatherThan(10);
+// console.log(greatherThan10(11));
+
+// function noisy(f) {
+//   return (...args) => {
+//     console.log('caling with args ' + args);
+//     let result = f(...args);
+//     console.log(`caled with ${args} and result is ${result}`);
+//   };
+// }
+
+// console.log(noisy(Math.min)(1, 2, 3));
+
+function repeat(n, fn) {
+  for (let i = 0; i < n; i++) {
+    fn(i);
+  }
+}
+
+console.log(repeat(3, console.log));
