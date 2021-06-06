@@ -1899,3 +1899,18 @@ console.log(
 console.log(
   Math.round(average(SCRIPTS.filter((el) => !el.living).map((el) => el.year)))
 );
+
+function characterScript(code) {
+  for (let script of SCRIPTS) {
+    if (
+      script.ranges.some(([from, to]) => {
+        return code >= from && code < to;
+      })
+    ) {
+      return script;
+    }
+  }
+  return null;
+}
+
+console.log(characterScript(121));
