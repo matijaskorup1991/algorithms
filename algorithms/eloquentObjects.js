@@ -38,3 +38,26 @@ let temp = new Temperature(22);
 console.log(temp.getFahrenheit());
 temp.setFahrenheit(86);
 console.log(temp.celsius);
+
+class Vec {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+  plus(a, b) {
+    return {
+      x: this.x + a,
+      y: this.y + b,
+    };
+  }
+  minus(a, b) {
+    return {
+      x: this.x - a,
+      y: this.y - b,
+    };
+  }
+}
+
+let vector = new Vec(1, 2);
+console.log(vector.plus(1, 2));
+console.log(vector.minus(1, 2));
