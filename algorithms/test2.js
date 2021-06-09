@@ -35,3 +35,10 @@ function sumAll(arr) {
 
 // console.log(sumAll([1, 4]));
 // console.log(sumAll([5, 10]));
+
+function diffArray(arr1, arr2) {
+  let newArray = [...arr1, ...arr2];
+  return newArray.filter((el) => !arr1.includes(el) || !arr2.includes(el));
+}
+
+// console.log(diffArray([1, 2, 3, 4], [1, 2, 3, 4, 5, 6]));
