@@ -21,3 +21,17 @@ function rot13(str) {
 }
 
 // console.log(rot13('lorem'));
+
+function sumAll(arr) {
+  let sorted = arr.sort((a, b) => a - b);
+  let a = sorted[0];
+  let b = sorted[1];
+  let res = 0;
+  for (let i = a; i <= b; i++) {
+    res += i;
+  }
+  return res;
+}
+
+// console.log(sumAll([1, 4]));
+// console.log(sumAll([5, 10]));
