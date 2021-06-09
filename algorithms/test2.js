@@ -9,4 +9,15 @@ function getInxToIns(arr, num) {
   return counter;
 }
 
-console.log(getInxToIns([20, 3, 5], 19));
+// console.log(getInxToIns([20, 3, 5], 19));
+
+function rot13(str) {
+  let regex = /[a-zA-Z0-9]/;
+  return str
+    .split('')
+    .map((el) => (regex.test(el) ? el.charCodeAt(0) + 13 : el))
+    .map((el) => String.fromCharCode(el))
+    .join('');
+}
+
+// console.log(rot13('lorem'));
