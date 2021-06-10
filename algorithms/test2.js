@@ -96,3 +96,33 @@ function twoSum(arr, target) {
 }
 
 // console.log(twoSum([2, 7, 11, 15], 9));
+
+// * Median of Two Sorted Arrays
+// *
+// * There are two sorted arrays nums1 and nums2 of size m and n respectively.
+// *
+// * Find the median of the two sorted arrays.
+// *
+// * Example 1:
+// * nums1 = [1, 3]
+// * nums2 = [2]
+// *
+// * The median is 2.0
+// * Example 2:
+// * nums1 = [1, 2]
+// * nums2 = [3, 4]
+// *
+// * The median is (2 + 3)/2 = 2.5
+// */
+
+// /**
+// * Find the median from two sorted arrays
+
+function median(arr1, arr2) {
+  let length = arr1.length + arr2.length;
+  return (
+    (arr1.reduce((a, b) => a + b, 0) + arr2.reduce((a, b) => a + b, 0)) / length
+  );
+}
+
+// console.log(median([1, 2], [3, 4]));
