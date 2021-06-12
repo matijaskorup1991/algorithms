@@ -155,4 +155,98 @@ function plusOne(num) {
   return String(number).split('');
 }
 
-console.log(plusOne([4, 3, 2, 1]));
+// console.log(plusOne([4, 3, 2, 1]));
+
+/**
+ * Find All Numbers Disappeared in an Array
+ *
+ * Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
+ *
+ * Find all the elements of [1, n] inclusive that do not appear in this array.
+ *
+ *
+ * Example:
+ *
+ * Input:
+ * [4,3,2,7,8,2,3,1]
+ *
+ * Output:
+ * [5,6]
+ */
+
+function findNumbers(arr) {
+  let newArr = arr.sort((a, b) => a - b);
+  let res = [];
+  for (let i = newArr[0]; i < newArr[newArr.length - 1]; i++) {
+    res.push(i);
+  }
+  return res.filter((el) => !newArr.includes(el));
+}
+// console.log(findNumbers([4, 3, 2, 7, 8, 2, 3, 1]));
+
+/**
+ * Find Peak Element
+ *
+ * A peak element is an element that is greater than its neighbors.
+ *
+ * Given an input array where num[i] ≠ num[i+1], find a peak element and return its index.
+ *
+ * The array may contain multiple peaks, in that case return the index to any one of the peaks is fine.
+ *
+ * You may imagine that num[-1] = num[n] = -∞.
+ *
+ * For example, in array [1, 2, 3, 1], 3 is a peak element and your function should return the index number 2.
+ */
+
+function peakElement(arr) {
+  let res = '';
+  if (arr.indexOf(Math.max(...arr)) === 0) {
+    return 0;
+  } else if (arr.indexOf(Math.max(...arr)) === arr.length - 1) {
+    return arr.length - 1;
+  }
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i + 1] < arr[i] && arr[i] > arr[i - 1]) {
+      res = arr.indexOf(arr[i]);
+    }
+  }
+  return res;
+}
+// console.log(peakElement([1, 2, 3, 4, 5, 6, 9]));
+
+/**
+ * First Unique Character in a String
+ *
+ * Given a string, find the first non-repeating character in it and return it's index.
+ * If it doesn't exist, return -1.
+ *
+ * Examples:
+ *
+ * s = "leetcode"
+ * return 0.
+ *
+ * s = "loveleetcode",
+ * return 2.
+ */
+
+function firstUnique(str) {
+  let res = {};
+  let char;
+  for (let i of str) {
+    if (res[i]) {
+      res[i] += 1;
+    } else {
+      res[i] = 1;
+    }
+  }
+  for (let item in res) {
+    if (res[item] === 1) {
+      char = str.indexOf(item);
+      break;
+    }
+  }
+  return char ? char : -1;
+}
+
+console.log(firstUnique('loveleetcode'));
