@@ -288,3 +288,16 @@ function routeCircle(input) {
 }
 
 // console.log(routeCircle('LL'));
+
+function addTogether(a, ...args) {
+  console.log(args);
+  if (args.length === 1) {
+    return a + args[0];
+  }
+
+  return (...args) => a + args[0];
+}
+
+console.log(addTogether(5, 10));
+// let add5 = addTogether(5);
+// console.log(add5(5));
